@@ -1,0 +1,138 @@
+/*header after fix the problem as the container
+sizes to zero*/
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: wrap;
+  margin-bottom: 70px;
+  margin-top: 20px;
+  border-bottom: 1px solid #b8b8b8;
+  /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+  padding-bottom: 16px;
+}
+.logo {
+  padding-left: 10px;
+}
+#loggedin-user{
+  color: #594400;
+  
+}
+.dropdown-btn {
+  display: none;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: fit-content;
+}
+nav ul li {
+  display: inline-block;
+  margin: 10px 20px;
+  position: relative;
+}
+#link {
+  color: #806203;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+#link:hover {
+  color: #ce9f04;
+}
+
+#link-login {
+  color: #806203;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+#link-login:hover {
+  color: #c89900;
+}
+#link-logout {
+  color: #806203;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+#link-logout:hover {
+  color: #c79800;
+}
+/* creating a pseudo element to bring the dash 
+effect above the nav links when hovering*/
+#link::before {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #dfdddd;
+  position: absolute;
+  top: -30px;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+#link:hover::before {
+  width: 100%;
+}
+
+/* mobile phones*/
+@media screen and (max-width: 600px) {
+  .dropdown-btn {
+    margin-right: 0.9rem;
+    background-color: transparent;
+    display: block;
+    cursor: pointer;
+    color: #806203;
+  }
+
+  .nav-elements {
+    position: absolute;
+    right: 0.4rem;
+    top: 120px;
+    background-color: #282c34;
+    width: 0px;
+    margin-top: 15px;
+    height: 8rem;
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+  }
+
+  .nav-elements.active {
+    width: 80px;
+    background-color: rgb(151, 151, 151);
+    border-radius: 1%;
+    border: transparent;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  .nav-elements ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-elements ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 0.25rem;
+    left: -20px;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+  }
+  #link::before {
+    width: 0%;
+  }
+  #link:hover::before {
+    width: 0%;
+  }
+  #link:hover {
+    color: #ce9f04;
+  }
+  #link:focus {
+    color: #806203;
+  }
+}
